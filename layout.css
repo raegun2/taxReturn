@@ -1,0 +1,46 @@
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display:block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction:column;
+    background-image: url('./src/assets/home-header.jpeg'); /* Fixed background image */
+    background-size: cover;  /* Ensures image covers the entire div */
+    background-position: center; /* Centers the background */
+    
+}
+
+.container {
+    display: block;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+}
+
+.contentWrapper {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    padding: 5vh; 
+}
+
+
+.footer {
+    display: block;
+    padding-top: 0px;
+    background-size:cover;
+    background-position:center;
+    background-color:black;
+}
+
+.com1 {
+    position: relative;
+    display: block;
+    height: 70vh;
+    background-color: blue;
+    width: 100%;
+}

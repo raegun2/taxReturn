@@ -1,12 +1,51 @@
 
 import { Link } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
+import {homeHeader} from "../assets/home-header"
+const navLinks = [
+    {
+      id: 0,
+      title: "HOME",
+      bgI: ` ${homeHeader}`,
+      path: "/"
+    },
+    {
+      id: 1,
+      title: "Accounting & Advisory",
+      bgI: `null`,
+      path: "AccountingAdvisory"
+    },
+    {
+      id: 2,
+      title: "Helpful Resources",
+      bgI: `${artistPaintBackground}`,
+      path: "HelpfulResources"
 
- 
+    },
+    {
+      id: 3,
+      title: "CONTACT US",
+      bgI: `${contactUsPaintBackground}`,
+      path: "Contact Us"
+    }
+  ];
 
 
 function Navbar() {
- 
+    const [myBg, setMyBg] = useState();
+    const [isActive,setIsActive] = useState();
+
+    const createCss = () => {
+        if ( id === isActive) {
+            setMyBg(bgI || bgI);
+            print(myBg);
+
+        }
+    }
+     
+
+
+
 
   return (
     
@@ -32,19 +71,23 @@ function Navbar() {
                                         <li><a className="dropdown-item" href="#">Something else here</a></li>
                                     </ul>
                                 </li>
-                            </ul>
+                            </ul> 
                         </li>
-                            
-                        
-                        <li className="nav-item">
-                            <Link to="AccountingAdvisory" className="nav-link">Accounting & Advisory</Link>
+                        {navLinks.slice(1).map(({title,path,bgI,id}) =>(
+                            <li className="nav-item">
+                                <Link to={path} onclick={() => setIsActive(id)} >{title}</Link>
+                                
+                            </li>
+                        ))}
+                        {/* <li className="nav-item">
+                            <Link to="AccountingAdvisory" className="nav-link" onclick={(e)=> handleclick }>Accounting & Advisory</Link>
                         </li>
                         <li className="nav-item">
                             <Link to="HelpfulResources" className="nav-link">Helpful Resources</Link>
                         </li>
                         <li className="nav-item">
                             <Link to="ContactMe" className="nav-link">Contact Us</Link>
-                        </li>
+                        </li>*/}
                     </ul>
                 </div>
             </div>
@@ -52,4 +95,4 @@ function Navbar() {
     
   );
 }
-export default Navbar
+export default Navbar({myBg})
