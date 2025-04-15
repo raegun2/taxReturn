@@ -51,9 +51,9 @@ export default function AccountingAdvisory() {
                                     </div>
                                 </div>
                                 <div className="col-10 col-lg-4 my-3 bg-white rounded">
-                                    <div className=" form-group row justify-content-center">                             
+                                    <div className=" form-group row justify-content-center px-4">                             
                                         <div className="text-center">
-                                            <InlineWidget url="https://calendly.com/erosapollon81/30min?hide_landing_page_details=1" />
+                                            <InlineWidget url="https://calendly.com/erosapollon81/30min?hide_event_type_details=1" />
                                         </div>
                                 </div>
                                 </div>

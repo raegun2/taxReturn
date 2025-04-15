@@ -34,7 +34,7 @@ export default function AccountingAdvisory() {
                     <div className="col-12">
                         <div className=" container d-flex justify-content-center">
                             <div className="row align-items-center justify-content-center">
-                                <div className="col-lg-8">
+                                <div className="col-lg-7">
                                     <h1 className="text-light">Affordable Bookkeeping Services for Small Businesses</h1>
                                     <p className="text-light lead my-4">
                                     Hassle-free, affordable bookkeeping services for small businesses by Xero-certified bookkeepers supervised by CPA-qualified accountants.
@@ -50,10 +50,10 @@ export default function AccountingAdvisory() {
                                         <button onClick={handleClick} className="btn btn-warning btn-lg">General Enquiry</button>
                                     </div>
                                 </div>
-                                <div className="col-10 col-lg-4 my-3 bg-white rounded">
+                                <div className="col-10 col-lg-5 bg-white rounded">
                                     <div className=" form-group row justify-content-center">                             
                                         <div className="text-center">
-                                            <InlineWidget url="https://calendly.com/erosapollon81/30min?hide_landing_page_details=1" />
+                                            <InlineWidget url="https://calendly.com/erosapollon81/30min?hide_event_type_details=1" />
                                         </div>
                                 </div>
                                 </div>
