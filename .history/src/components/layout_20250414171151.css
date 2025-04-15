@@ -1,0 +1,70 @@
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display:block;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: block;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+}
+
+.contentWrapper {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 5vh; 
+    flex-direction: column;
+}
+
+
+.footer {
+    display: block;
+    padding-top: 0px;
+    background-size:cover;
+    background-position:center;
+    background-color:black;
+}
+
+.com1 {
+    position: relative;
+    display: block;
+    height: 70vh;
+    background-color: blue;
+    width: 100%;
+}
+
+.alphabet-counter-style li::before {
+    content: "("counter(item, lower-alpha) ") ";
+    counter-increment: item;
+    color: black;
+
+}
+
+.alphabet-counter-style {
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 2rem;
+    text-indent: -20px;    
+    
+}
+.index {
+    counter-reset: index;
+    list-style-type: none;
+}
+.index_item {
+    list-style-type: none;
+    padding-left: 2rem;
+    text-indent: -20px;    
+}
+.index_item::before {
+    counter-increment: index;
+    content: counters(index, '.')  '. ';
+}
