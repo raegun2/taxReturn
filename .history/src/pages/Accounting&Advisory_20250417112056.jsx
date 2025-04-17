@@ -149,9 +149,8 @@ export default function AccountingAdvisory() {
                         </div>
                     </div>
                 </div>
-            </section>
-            <section className="bg-light vw-100">
-                <div className="container h-50 py-3">
+
+                <div className="container d-flex h-50 py-3">
                     <div className="row">    
                         <div className="col-xl-4 p-4 bg-info flex-grow-0 text-center">
                             <img src="src\assets\Xero about-our-services2.jpg" alt="Small Business" style={{height: "400px"}}/>
@@ -171,10 +170,10 @@ export default function AccountingAdvisory() {
                     
                     </div>
                 </div>
-            </section>
+                
 
                 
-            
+            </section>
             
         
         </>

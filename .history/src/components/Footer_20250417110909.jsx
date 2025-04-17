@@ -16,9 +16,9 @@ export default function Footer() {
                             <div className=" col-lg-4 text-start">
                                 <h5 className="text-light ps-4 lead ">Quick Link</h5>
                                 <ul className="">
-                                    <li className="nav-link"><Link to="TaxReturn2025" className="dropdown-item">2025 Tax Return </Link></li>
-                                    <li className="nav-link"><Link to="TaxReturn2024" className="dropdown-item">2024 Tax Return </Link></li>
-                                    <li className="nav-link"><Link to="TaxReturn2023" className="dropdown-item">2023 Tax Return </Link></li>
+                                    <li className="nav-link"><Link to="TaxReturn2025" className="dropdown-item">Tax Return 2025</Link></li>
+                                    <li className="nav-link"><Link to="TaxReturn2024" className="dropdown-item">Tax Return 2024</Link></li>
+                                    <li className="nav-link"><Link to="TaxReturn2023" className="dropdown-item">Tax Return 2023</Link></li>
                                     <li className="nav-link"><Link to="FeesAndCharges" className="dropdown-item" >Fees & Charges</Link></li>
                             
                                     

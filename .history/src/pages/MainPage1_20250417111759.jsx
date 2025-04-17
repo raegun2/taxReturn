@@ -1,4 +1,4 @@
-import ContactForm from "../components/TaxContactForm";
+import ContactForm from "./TaxContactForm";
 import { Link } from 'react-router-dom';
 import { useRef } from "react";
 import TaxCalculator from "../components/TaxCalculator";
@@ -39,7 +39,7 @@ function MainPage1() {
             <TaxCalculator />
             <section className="stepsToRefund bg-light text-center vw-100">
             <div className="container pb-2 t text-white">
-            <h2 className="text-warning fw-bold">3 steps to Get</h2>
+            <h2 className="text-warning fw-bold">How to Get</h2>
             <h2 className="fw-bolder text-dark pb-3">Your Tax Refund</h2>
                 <div className="row text-center g-1" >
                     <div className="col-lg ">

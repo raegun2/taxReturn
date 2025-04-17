@@ -63,17 +63,17 @@ export default function AccountingAdvisory() {
                     
                     </div>
                 </div>
-                <div className="container h-50 py-3">
+                <div className="container h-50 d-flex bg-light rounded py-3 ">
                     <div className="row justify-content-evenly">
                         <div className="col-lg-4 m-3 p-3 text-start text-light bg-info rounded">
                             <div className="row flex-column">
-                                <div className="">
+                                <div className="col">
                                     <h3 className="fw-bolder">Starter</h3>
                                 </div>
-                                <div className="">
+                                <div className="col">
                                     <h2  className="fw-bolder p-2">$150.00/month + GST</h2>
                                 </div>
-                                <div className="">
+                                <div className="col">
                                 <ul>
                                     <li>Unlimited support by telephone and email</li>
                                     <li>Preparation of quarterly BAS</li>
@@ -82,7 +82,7 @@ export default function AccountingAdvisory() {
                                 </ul>
                                 <p><em>This package is for a maximum of 100 bank/credit card transactions per month. Xero Subscription not included.</em></p>
                                 </div>
-                                <div className="">
+                                <div className="col">
                                     <button className="btn btn-white" type="button" onClick={handleClickStarter} >
                                         <span className="text-light dropdown-toggle">Add-ons</span>
                                     </button>
@@ -104,15 +104,15 @@ export default function AccountingAdvisory() {
                                 </div>
                             </div>
                         </div>
-                        <div className=" col-lg-4 m-3 p-3 text-start text-light bg-warning rounded">
+                        <div className="col-lg-4 m-3 p-3 text-start text-light bg-warning rounded">
                             <div className="row flex-column">
-                                <div className="">
+                                <div className="col">
                                     <h3 className="fw-bolder " >Standard</h3>
                                 </div>
-                                <div className="">
+                                <div className="col">
                                     <h2 className="fw-bolder p-2">$250.00/month + GST</h2>
                                 </div>
-                                <div className="">
+                                <div className="col">
                                 <ul>
                                         <li className="text-light">Unlimited support by telephone and email</li>
                                         <li className="text-light">Preparation of quarterly or monthly BAS</li>
@@ -125,7 +125,7 @@ export default function AccountingAdvisory() {
                                 </ul>
                                 <p><em>This package is for a maximum of 100 bank/credit card transactions per month. Xero Subscription not included.</em></p>
                                 </div>
-                                <div className="">
+                                <div className="col ">
                                     <button className="btn" type="button" onClick={handleClickStandard} >
                                         <span className="text-light dropdown-toggle">Add-ons</span>
                                     </button>
@@ -149,10 +149,10 @@ export default function AccountingAdvisory() {
                         </div>
                     </div>
                 </div>
-            </section>
-            <section className="bg-light vw-100">
-                <div className="container h-50 py-3">
-                    <div className="row">    
+
+                <div className="container rounded m-3 p-2 container  bg-light rounded py-3 ">
+                    <div className="">
+                            <div className="row">
                         <div className="col-xl-4 p-4 bg-info flex-grow-0 text-center">
                             <img src="src\assets\Xero about-our-services2.jpg" alt="Small Business" style={{height: "400px"}}/>
                         </div>
@@ -168,13 +168,13 @@ export default function AccountingAdvisory() {
                             <p>Our Xero-certified bookkeepers specialise in helping small to medium businesses achieve a solid financial footing and grow into the long-term. With a Google rating of 4.7 and over 1200 reviews, we are trusted to provide reliable bookkeeping services Australia-wide. Take the stress out of your finances and give yourself more time to grow your business by reaching out for a free consultation today.</p>
                             <button onClick={handleClick} className="btn btn-primary btn-lg">General Enquiry</button>
                         </div>
-                    
+                        </div>
                     </div>
                 </div>
-            </section>
+                
 
                 
-            
+            </section>
             
         
         </>

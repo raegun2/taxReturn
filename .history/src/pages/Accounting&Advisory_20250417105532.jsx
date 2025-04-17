@@ -65,15 +65,15 @@ export default function AccountingAdvisory() {
                 </div>
                 <div className="container h-50 py-3">
                     <div className="row justify-content-evenly">
-                        <div className="col-lg-4 m-3 p-3 text-start text-light bg-info rounded">
+                        <div className="col-10 col-lg-4 m-3 p-3 text-start text-light bg-info rounded">
                             <div className="row flex-column">
-                                <div className="">
+                                <div className="col">
                                     <h3 className="fw-bolder">Starter</h3>
                                 </div>
-                                <div className="">
+                                <div className="col">
                                     <h2  className="fw-bolder p-2">$150.00/month + GST</h2>
                                 </div>
-                                <div className="">
+                                <div className="col">
                                 <ul>
                                     <li>Unlimited support by telephone and email</li>
                                     <li>Preparation of quarterly BAS</li>
@@ -82,7 +82,7 @@ export default function AccountingAdvisory() {
                                 </ul>
                                 <p><em>This package is for a maximum of 100 bank/credit card transactions per month. Xero Subscription not included.</em></p>
                                 </div>
-                                <div className="">
+                                <div className="col">
                                     <button className="btn btn-white" type="button" onClick={handleClickStarter} >
                                         <span className="text-light dropdown-toggle">Add-ons</span>
                                     </button>
@@ -104,7 +104,7 @@ export default function AccountingAdvisory() {
                                 </div>
                             </div>
                         </div>
-                        <div className=" col-lg-4 m-3 p-3 text-start text-light bg-warning rounded">
+                        <div className="col-10 col-lg-4 m-3 p-3 text-start text-light bg-warning rounded">
                             <div className="row flex-column">
                                 <div className="">
                                     <h3 className="fw-bolder " >Standard</h3>
@@ -149,12 +149,11 @@ export default function AccountingAdvisory() {
                         </div>
                     </div>
                 </div>
-            </section>
-            <section className="bg-light vw-100">
-                <div className="container h-50 py-3">
+
+                <div className="container d-flex h-50 py-3">
                     <div className="row">    
                         <div className="col-xl-4 p-4 bg-info flex-grow-0 text-center">
-                            <img src="src\assets\Xero about-our-services2.jpg" alt="Small Business" style={{height: "400px"}}/>
+                            <img src="src\assets\Xero about-our-services2.jpg" alt="Small Business" style={{height: "400px", width: "auto"}}/>
                         </div>
                         <div className="col-xl-2"></div>
                         <div className="col-xl-6 p-5 text-start">
@@ -171,10 +170,10 @@ export default function AccountingAdvisory() {
                     
                     </div>
                 </div>
-            </section>
+                
 
                 
-            
+            </section>
             
         
         </>

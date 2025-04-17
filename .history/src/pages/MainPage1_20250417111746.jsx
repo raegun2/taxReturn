@@ -1,4 +1,4 @@
-import ContactForm from "../components/TaxContactForm";
+import ContactForm from "./TaxContactForm";
 import { Link } from 'react-router-dom';
 import { useRef } from "react";
 import TaxCalculator from "../components/TaxCalculator";

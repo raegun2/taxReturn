@@ -24,7 +24,7 @@ export default function Footer() {
                                     
                                 </ul>
                             </div>
-                            <div className=" col-lg-4 text-start pt-4">
+                            <div className=" col-lg-4 text-start">
                                 <ul className="">
                                     
                                     
