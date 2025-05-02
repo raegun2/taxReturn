@@ -25,7 +25,7 @@ function ContactForm() {
       };
   
       try {
-        const res = await fetch("http://localhost:5173/php/send_sms.php", {
+        const res = await fetch("http://localhost:5173/send-sms.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

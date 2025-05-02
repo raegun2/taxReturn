@@ -6,6 +6,7 @@ function ContactForm() {
 
     const [response, setResponse] = useState(null);
     const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [phone, setPhone] = useState("");
     
   
@@ -13,40 +14,48 @@ function ContactForm() {
     const handleChange = (e) => {
       const { name, value } = e.target;
       if (name === "firstName") setFirstName(value);
+      if (name === "lastName") setLastName(value);
       if (name === "phone") setPhone(value);
     };
-    
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-  
-      const payload = {
-        phone: phone,
-        message: `Hello ${firstName}, your refund estimate is ready!`,
-      };
-  
-      try {
-        const res = await fetch("http://localhost:5173/php/send_sms.php", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
-        });
-  
-        const result = await res.json();
-        setResponse(result);
-      } catch (error) {
-        console.error("SMS sending failed:", error);
-        setResponse({ error: "Failed to send SMS" });
-      }
+  const sendSms = async (e) => {
+    e.preventDefault();
+
+    const url = 'https://cellcast.com.au/api/v3/send-sms';
+
+    const headers = {
+      'APPKEY': '<<CELLCAST8d65428cb79d21d8052788450907ffe3>>',  // replace with your actual App Key
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
     };
-  
+
+    const message = [
+      {
+        sms_text: `Hi ${firstName} Test one message`,
+        numbers: `+61${phone}`, 
+      },
+    ];
+
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(message),
+      });
+
+      const data = await res.json();
+      setResponse(data);
+      console.log('SMS sent successfully:', data);
+    } catch (error) {
+      console.error('Error sending SMS:', error);
+      setResponse({ msg: "Something went wrong, please try again." });
+    }
+    };
 
 
       
     return (
     <div className="col-10 col-lg-4 p-4 my-3 bg-warning rounded">
-        <form id="contact-form" onSubmit={handleSubmit}>
+        <form id="contact-form" onSubmit={sendSms}>
             <div className=" form-group row justify-content-center px-4">                             
                     <div className="text-center">
                         <h2>Free Refund</h2>
@@ -92,7 +101,7 @@ function ContactForm() {
                     </div>
                     {response && (
                         <div style={{ marginTop: '20px' }}>
-                            <h2>Response:</h2>
+                            
                             <pre>{JSON.stringify(response, null, 2)}</pre>
                         </div>
                     )}

@@ -6,6 +6,7 @@ function ContactForm() {
 
     const [response, setResponse] = useState(null);
     const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [phone, setPhone] = useState("");
     
   
@@ -13,40 +14,30 @@ function ContactForm() {
     const handleChange = (e) => {
       const { name, value } = e.target;
       if (name === "firstName") setFirstName(value);
+      if (name === "lastName") setLastName(value);
       if (name === "phone") setPhone(value);
     };
     
     const handleSubmit = async (e) => {
       e.preventDefault();
-  
-      const payload = {
-        phone: phone,
-        message: `Hello ${firstName}, your refund estimate is ready!`,
-      };
-  
-      try {
-        const res = await fetch("http://localhost:5173/php/send_sms.php", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
-        });
-  
-        const result = await res.json();
-        setResponse(result);
-      } catch (error) {
-        console.error("SMS sending failed:", error);
-        setResponse({ error: "Failed to send SMS" });
-      }
+    
+      const response = await fetch("http://localhost/php/send_sms.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ phone, firstName }),
+      });
+    
+      const result = await response.json();
+      console.log(result);
     };
-  
 
 
       
     return (
     <div className="col-10 col-lg-4 p-4 my-3 bg-warning rounded">
-        <form id="contact-form" onSubmit={handleSubmit}>
+        <form id="contact-form" onSubmit={sendSms}>
             <div className=" form-group row justify-content-center px-4">                             
                     <div className="text-center">
                         <h2>Free Refund</h2>

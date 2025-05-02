@@ -1,52 +1,10 @@
 import { Link } from "react-router-dom";
-import React, { useState } from 'react';
-
 
 function ContactForm() {
-
-    const [response, setResponse] = useState(null);
-    const [firstName, setFirstName] = useState("");
-    const [phone, setPhone] = useState("");
-    
-  
-    // Handle input changes
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      if (name === "firstName") setFirstName(value);
-      if (name === "phone") setPhone(value);
-    };
-    
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-  
-      const payload = {
-        phone: phone,
-        message: `Hello ${firstName}, your refund estimate is ready!`,
-      };
-  
-      try {
-        const res = await fetch("http://localhost:5173/php/send_sms.php", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
-        });
-  
-        const result = await res.json();
-        setResponse(result);
-      } catch (error) {
-        console.error("SMS sending failed:", error);
-        setResponse({ error: "Failed to send SMS" });
-      }
-    };
-  
-
-
       
     return (
     <div className="col-10 col-lg-4 p-4 my-3 bg-warning rounded">
-        <form id="contact-form" onSubmit={handleSubmit}>
+        <form method="post" id="contact-form">
             <div className=" form-group row justify-content-center px-4">                             
                     <div className="text-center">
                         <h2>Free Refund</h2>
@@ -54,11 +12,11 @@ function ContactForm() {
                         <p>Simply fill out the form and we’ll be in touch.</p>
                     </div>
                     <div className="">
-                        <input onChange={handleChange} placeholder="First Name" name="firstName" id="first-name"type="text" autoComplete="off" autoFocus className="form-control" required/>
+                        <input placeholder="First Name" name="first-name" id="first-name"type="text" autoComplete="off" autoFocus className="form-control" required/>
                     </div>
                     
                     <div className="pt-1">
-                        <input onChange={handleChange} placeholder="Last Name" name="lastName" id="last-name" type="text" autoComplete="off" className="form-control" required/>
+                        <input placeholder="Last Name" name="last-name" id="last-name" type="text" autoComplete="off" className="form-control" required/>
                     </div>
                     
                     <div className=" pt-1">
@@ -70,11 +28,11 @@ function ContactForm() {
                     </div>
                     
                     <div className=" pt-1">
-                        <input onChange={handleChange} placeholder="Tax File No." pattern="\d{9}" name="tfn" id="tfn" type="text" autoComplete="off" className="form-control" required />
+                        <input placeholder="Tax File No." pattern="\d{9}" name="tfn" id="tfn" type="text" autoComplete="off" className="form-control" required />
                     </div>
                     
                     <div className=" pt-1">
-                        <input onChange={handleChange} placeholder="Mobile" name="phone" id="phone" type="tel" autoComplete="off" className="form-control" required />
+                        <input placeholder="Phone" name="phone" id="phone" type="tel" autoComplete="off" className="form-control" required />
                     </div>
                     
                     <div className=" pt-1">
@@ -89,17 +47,10 @@ function ContactForm() {
                     </div>
                     <div className="w-50 text-center pt-1">
                         <input className="btn btn-primary w-75 " id="button"value="Submit" type="submit" />
-                    </div>
-                    {response && (
-                        <div style={{ marginTop: '20px' }}>
-                            <h2>Response:</h2>
-                            <pre>{JSON.stringify(response, null, 2)}</pre>
-                        </div>
-                    )}
-                        
+                    </div>    
             </div>             
         </form>
     </div>
     );
-};
+}
 export default ContactForm;
