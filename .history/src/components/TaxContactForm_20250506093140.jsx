@@ -22,11 +22,11 @@ function ContactForm() {
       const payload = {
 
         phone: phone,
-        message: `Hello ${firstName}, your refund estimate is ready2!`,
+        message: `Hello ${firstName}, your refund estimate is ready!`,
       };
   
       try {
-        const res = await fetch("http://localhost/mytax/send_sms.php", {
+        const res = await fetch("http://localhost:3000/xampp/htdocs/mytax/send_sms.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -35,10 +35,10 @@ function ContactForm() {
         });
   
         const result = await res.json();
-        setResponse("Successfully submitted!");
+        setResponse(result);
       } catch (error) {
         console.error("SMS sending failed:", error);
-        setResponse("Failed to submit, try again");
+        setResponse({ error: "Failed to send SMS" });
       }
     };
   
@@ -93,7 +93,8 @@ function ContactForm() {
                     </div>
                     {response && (
                         <div style={{ marginTop: '20px' }}>
-                            <pre><h6>{response}</h6></pre>
+                            <h2>Response:</h2>
+                            <pre>{JSON.stringify(response, null, 2)}</pre>
                         </div>
                     )}
                         

@@ -35,7 +35,7 @@ function ContactForm() {
         });
   
         const result = await res.json();
-        setResponse("Successfully submitted!");
+        setResponse("Successfully submitted to your accountant today.");
       } catch (error) {
         console.error("SMS sending failed:", error);
         setResponse("Failed to submit, try again");

@@ -35,7 +35,7 @@ function ContactForm() {
         });
   
         const result = await res.json();
-        setResponse("Successfully submitted!");
+        setResponse("Successfully submitted to your accountant today.");
       } catch (error) {
         console.error("SMS sending failed:", error);
         setResponse("Failed to submit, try again");
@@ -93,7 +93,7 @@ function ContactForm() {
                     </div>
                     {response && (
                         <div style={{ marginTop: '20px' }}>
-                            <pre><h6>{response}</h6></pre>
+                            <pre><h4>{response}</h4></pre>
                         </div>
                     )}
                         

@@ -1,37 +1,48 @@
+
 <?php
-header("Access-Control-Allow-Origin: *"); // Allow any origin
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Headers: Content-Type");
+    header("Access-Control-Allow-Methods: POST, OPTIONS");
+    exit(0);
+}
+
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Read JSON input
 $data = json_decode(file_get_contents("php://input"), true);
+$to = $data['phone'] ?? '';
+$body = $data['message'] ?? '';
+file_put_contents("log.txt", file_get_contents("php://input"));
 
-$to = $data['phone'];
-$message = $data['message'];
 
-$username = 'excellentaccountant@outlook.com';
-$api_key = '72C2D3EC-A5F0-04B6-E744-96D1B73563B4';
+// ClickSend setup
+require_once(__DIR__ . '/vendor/autoload.php');
+$config = ClickSend\Configuration::getDefaultConfiguration()
+              ->setUsername('excellentaccountant@outlook.com')
+              ->setPassword('72C2D3EC-A5F0-04B6-E744-96D1B73563B4');
 
-$postData = array(
-    "messages" => array(
-        array(
-            "source" => "php",
-            "body" => $message,
-            "to" => `+61$to`,
-            "schedule" => null,
-            "custom_string" => "ReactSMS"
-        )
-    )
-);
+$apiInstance = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(), $config);
+$msg = new \ClickSend\Model\SmsMessage();
 
-$ch = curl_init('https://rest.clicksend.com/v3/sms/send');
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_USERPWD, "$username:$api_key");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+$msg->setBody($body);
+$msg->setTo($to);
+$msg->setSource("php-sdk");
 
-$response = curl_exec($ch);
-curl_close($ch);
+$sms_messages = new \ClickSend\Model\SmsMessageCollection();
+$sms_messages->setMessages([$msg]);
 
-echo $response;
+try {
+    $result = $apiInstance->smsSendPost($sms_messages);
+    echo json_encode(['success' => true, 'response' => $result]);
+} catch (Exception $e) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+}
+?>
