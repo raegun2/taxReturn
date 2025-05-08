@@ -33,25 +33,29 @@ function ContactForm() {
       const payload = {
 
         phone: phone,
+        
         firstName: firstName,
         lastName: lastName,
         email: email,
         dob: dob,
         tfn: tfn,
         referral: referral,
-        sms_message: `Dear ${firstName}, Your accountant will be in touch with you soon. Please keep your phone handy for a call from us. Thank you for choosing Same Day Tax Refund.`,
-        consent: consent,
+        sms_message: `Hello ${firstName}, your refund estimate is ready2!`,
+        email_message: `new client detail, ${firstName} ${lastName} ${phone} ${email} ${dob} ${tfn} ${referral}, please call them to confirm the details and help them register on tax portal and call for tax return`,
+                        
+        
       };
       
-       // clear the form fields after submission
-       setFirstName("");
-       setPhone("");
-       setLastName("");
-       setEmail("");
-       setDob("");
-       setTfn("");
-       setReferral("");
-       setConsent(false);
+      // clear the form fields after submission
+        setFirstName("");
+        setPhone("");
+        setLastName("");
+        setEmail("");
+        setDob("");
+        setTfn("");
+        setReferral("");
+        setConsent(false);
+
 
       try {
         const res = await fetch("http://localhost/mytax/send_sms.php", {
@@ -70,17 +74,22 @@ function ContactForm() {
         setResponse("Failed to submit, try again");
       }
 
+      try {
+        const res = await fetch("http://localhost/mytax/send_email.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+        
 
-      // clear the form fields after submission
-       setFirstName("");
-       setPhone("");
-       setLastName("");
-       setEmail("");
-       setDob("");
-       setTfn("");
-       setReferral("");
-       setConsent(false);
-
+        const result = await res.json();
+        setResponse("Successfully submitted!");
+      } catch (error) {
+        console.error("email sending failed:", error);
+        setResponse("Failed to submit on email, try again");
+      }
     };
   
 

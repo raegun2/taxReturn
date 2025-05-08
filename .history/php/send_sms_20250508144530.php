@@ -46,7 +46,7 @@ try {
     $smsApi = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(), $config);
     $sms = new \ClickSend\Model\SmsMessage();
     $sms->setBody($body);
-    $sms->setTo($to);
+    $sms->setTo("+6141111111");
     $sms->setSource("php-sdk");
 
     $sms_collection = new \ClickSend\Model\SmsMessageCollection();

@@ -43,15 +43,7 @@ function ContactForm() {
         consent: consent,
       };
       
-       // clear the form fields after submission
-       setFirstName("");
-       setPhone("");
-       setLastName("");
-       setEmail("");
-       setDob("");
-       setTfn("");
-       setReferral("");
-       setConsent(false);
+      
 
       try {
         const res = await fetch("http://localhost/mytax/send_sms.php", {
@@ -72,14 +64,14 @@ function ContactForm() {
 
 
       // clear the form fields after submission
-       setFirstName("");
-       setPhone("");
-       setLastName("");
-       setEmail("");
-       setDob("");
-       setTfn("");
-       setReferral("");
-       setConsent(false);
+       // setFirstName("");
+       // setPhone("");
+       // setLastName("");
+       // setEmail("");
+       // setDob("");
+       // setTfn("");
+       // setReferral("");
+       // setConsent(false);
 
     };
   

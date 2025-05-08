@@ -39,19 +39,12 @@ function ContactForm() {
         dob: dob,
         tfn: tfn,
         referral: referral,
-        sms_message: `Dear ${firstName}, Your accountant will be in touch with you soon. Please keep your phone handy for a call from us. Thank you for choosing Same Day Tax Refund.`,
-        consent: consent,
+        message: `Hello ${firstName}, your refund estimate is ready2!`,
+                 
+        
       };
       
-       // clear the form fields after submission
-       setFirstName("");
-       setPhone("");
-       setLastName("");
-       setEmail("");
-       setDob("");
-       setTfn("");
-       setReferral("");
-       setConsent(false);
+
 
       try {
         const res = await fetch("http://localhost/mytax/send_sms.php", {
@@ -70,17 +63,7 @@ function ContactForm() {
         setResponse("Failed to submit, try again");
       }
 
-
-      // clear the form fields after submission
-       setFirstName("");
-       setPhone("");
-       setLastName("");
-       setEmail("");
-       setDob("");
-       setTfn("");
-       setReferral("");
-       setConsent(false);
-
+      
     };
   
 
