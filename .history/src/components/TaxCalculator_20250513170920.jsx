@@ -92,7 +92,7 @@ const TaxCalculator = () => {
           
             <form method="post" onSubmit={handleSubmit}>
               <div className="row justify-content-center text-dark text-center">
-                <label className="col-form-label">Total Income or Gross Payment: <i onMouseEnter={() => handleVisibleComment(1)} onMouseLeave={handleMouseLeave} className="bi bi-question-circle"></i></label>
+                <label className="col-form-label">Total Income or Gross Payment: <i onMouseEnter={handleVisibleComment(1)} onMouseLeave={handleMouseLeave} className="bi bi-question-circle"></i></label>
                 {
                   visibleComment === 1 && (
                     <div className="comment1"><p>
@@ -120,7 +120,7 @@ const TaxCalculator = () => {
                     <span className="input-group-text">.00</span>
                   </div>
                 </div>
-                <label className="col-form-label">Total Tax Withheld: <i onMouseEnter={() => handleVisibleComment(2)} onMouseLeave={handleMouseLeave} className="bi bi-question-circle"></i></label>
+                <label className="col-form-label">Total Tax Withheld: <i onMouseEnter={handleVisibleComment(2)} onMouseLeave={handleMouseLeave} className="bi bi-question-circle"></i></label>
                 {
                   visibleComment === 2 && (
                     <div className="comment1"><p>
@@ -148,7 +148,7 @@ const TaxCalculator = () => {
                     <span className="input-group-text">.00</span>
                   </div>
                 </div>
-                <label className="col-form-label">Total Applicable Deductions: <i onMouseEnter={() => handleVisibleComment(3)} onMouseLeave={handleMouseLeave} className="bi bi-question-circle"></i></label>
+                <label className="col-form-label">Total Applicable Deductions: <i onMouseEnter={handleVisibleComment(3)} onMouseLeave={handleMouseLeave} className="bi bi-question-circle"></i></label>
                 {
                   visibleComment === 3 && (
                     <div className="comment1"><p>Input the total expenses that you spent

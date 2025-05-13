@@ -69,16 +69,14 @@ body {
     content: counters(index, '.')  '. ';
 }
 
-.comment1 {
-    z-index: 1;
-    border: 2px solid rgb(116, 114, 114);
-    display: inline-flex;
-    width: 15vw;
-    background-color: rgb(214, 212, 212);
-    position: absolute;
-    border-radius: 5px;
-    top:810px;
-    right: 330px;
-    text-align: left;
+.question_icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-top: 10px;
 }
-
+.question_icon:hover {
+    background-color: red;
+}

@@ -5,15 +5,10 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 const TaxCalculator = () => {
-    // Handle the click event for the question icons
-  const [visibleComment, setVisibleComment] = useState(null);
-
-  const handleVisibleComment = (index) => {
-    setVisibleComment(index);
-  };
-  const handleMouseLeave = () => {
-    setVisibleComment(null);
-  };
+  const [showComment, setShowComment] = useState({display: "none"});
+  const [showComment2, setShowComment2] = useState({display: "none"});
+  const [showComment3, setShowComment3] = useState({display: "none"}); 
+  const [showComment4, setShowComment4] = useState({display: "none"});
 
   const [totalIncome, setTotalIncome] = useState("");
   const [taxWithheld, setTaxWithheld] = useState("");
@@ -21,7 +16,29 @@ const TaxCalculator = () => {
   const [result, setResult] = useState("");
 
 
-
+  // Handle the click event for the question icon
+  const handleClick = () => {
+    setShowComment((changeStyle) => ({
+      ...changeStyle, display: changeStyle.display === "none" ? "flex" : "none"}));
+  };
+  const handleClick2 = () => {
+    setShowComment2((changeStyle) => ({
+      ...changeStyle, display: changeStyle.display === "none" ? "flex" : "none"}));
+  };
+  const handleClick3 = () => {
+    setShowComment3((changeStyle) => ({
+      ...changeStyle, display: changeStyle.display === "none" ? "flex" : "none"}));
+  };  
+  const onMouseLeave = () => {
+    setShowComment({display: "none"});
+    setShowComment2({display: "none"});
+    setShowComment3({display: "none"});
+  };
+  const onMouseEnter = () => {
+    setShowComment({display: "flex"});
+    setShowComment2({display: "flex"});
+    setShowComment3({display: "flex"});
+  };
   // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -92,17 +109,8 @@ const TaxCalculator = () => {
           
             <form method="post" onSubmit={handleSubmit}>
               <div className="row justify-content-center text-dark text-center">
-                <label className="col-form-label">Total Income or Gross Payment: <i onMouseEnter={() => handleVisibleComment(1)} onMouseLeave={handleMouseLeave} className="bi bi-question-circle"></i></label>
-                {
-                  visibleComment === 1 && (
-                    <div className="comment1"><p>
-                                                Input the Total Income from your PAYG summary,
-                                                <br/>or if you have more than one PAYG summary,
-                                                <br/>add up all the Incomess and input the total amount.
-                                                </p>
-                    </div>
-                    )
-                  }
+                <label className="col-form-label">Total Income or Gross Payment: <i onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="bi bi-question-circle"></i></label>
+                <div className="comment" style={showComment}><p> add up all the income and input <br /> the total income that you earn from</p></div>
                 <div className="input-group mb-3 w-75">
                   <div className="input-group-prepend">
                     <span className="input-group-text">$</span>
@@ -120,17 +128,7 @@ const TaxCalculator = () => {
                     <span className="input-group-text">.00</span>
                   </div>
                 </div>
-                <label className="col-form-label">Total Tax Withheld: <i onMouseEnter={() => handleVisibleComment(2)} onMouseLeave={handleMouseLeave} className="bi bi-question-circle"></i></label>
-                {
-                  visibleComment === 2 && (
-                    <div className="comment1"><p>
-                                                Input the tax withheld from your PAYG summary,
-                                                <br/>or if you have more than one PAYG summary,
-                                                <br/>add up all the tax withhelds and input the total amount.
-                                                </p></div>
-                    )
-                  }
-                
+                <label className="col-form-label">Total tax withheld: <i className="question_icon bi bi-question-circle" onClick={handleClick2}></i> <div className="comment" style={showComment2}><p>abc is abc</p></div></label>
                 <div className="input-group mb-3 w-75">
                   <div className="input-group-prepend">
                     <span className="input-group-text">$</span>
@@ -148,16 +146,7 @@ const TaxCalculator = () => {
                     <span className="input-group-text">.00</span>
                   </div>
                 </div>
-                <label className="col-form-label">Total Applicable Deductions: <i onMouseEnter={() => handleVisibleComment(3)} onMouseLeave={handleMouseLeave} className="bi bi-question-circle"></i></label>
-                {
-                  visibleComment === 3 && (
-                    <div className="comment1"><p>Input the total expenses that you spent
-                                                <br/> for tax deductables, for example, work or education.
-                                                <br/>Add up all the expenses and input the total amount.
-                                                </p></div>
-                    )
-                  }
-                
+                <label className="col-form-label">Total Applicable Deductions: <i className="question_icon bi bi-question-circle" onClick={handleClick3}></i> <div className="comment" style={showComment3}><p>abc is abc</p></div></label>
                 <div className="input-group mb-3 w-75">
                   <div className="input-group-prepend">
                     <span className="input-group-text">$</span>
