@@ -1,0 +1,126 @@
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display:block;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: block;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+}
+
+.contentWrapper {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding-top: 5vh; 
+    flex-direction: column;
+}
+
+
+.footer {
+    display: block;
+    padding-top: 0px;
+    background-size:cover;
+    background-position:center;
+    background-color:black;
+}
+
+.com1 {
+    position: relative;
+    display: block;
+    height: 70vh;
+    background-color: blue;
+    width: 100%;
+}
+
+.alphabet-counter-style li::before {
+    content: "("counter(item, lower-alpha) ") ";
+    counter-increment: item;
+    color: black;
+
+}
+
+.alphabet-counter-style {
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 2rem;
+    text-indent: -20px;    
+    
+}
+.index {
+    counter-reset: index;
+    list-style-type: none;
+}
+.index_item {
+    list-style-type: none;
+    padding-left: 2rem;
+    text-indent: -20px;    
+}
+.index_item::before {
+    counter-increment: index;
+    content: counters(index, '.')  '. ';
+}
+
+.comment1 {
+    z-index: 1;
+    border: 2px solid rgb(116, 114, 114);
+    display: inline-flex;
+    width: 15vw;
+    background-color: rgb(214, 212, 212);
+    position: absolute;
+    border-radius: 5px;
+    top:810px;
+    right: 330px;
+    text-align: left;
+}
+/*taxcalculator*/
+.tooltip-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.tooltip-icon-wrapper i {
+  font-size: 1.1rem;
+  color: #0d6efd;
+  transition: transform 0.2s ease;
+}
+
+.tooltip-icon-wrapper i:hover {
+  transform: scale(1.2);
+}
+
+.modern-tooltip {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: #fff;
+  color: #333;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.85rem;
+  width: 280px;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

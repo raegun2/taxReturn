@@ -1,5 +1,6 @@
 {
     "require": {
-        "clicksend/clicksend-php": "^5.0"
+        "clicksend/clicksend-php": "^5.0",
+        "twilio/sdk": "^8.6"
     }
 }
