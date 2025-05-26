@@ -2,8 +2,8 @@
 <?php
 // List of allowed origins
 $allowedOrigins = [
-    'https://onlinetaxrefundtoday.com.au',
-    'https://www.onlinetaxrefundtoday.com.au'
+    'https://onlinetaxrefund.com.au',
+    'https://www.onlinetaxrefund.com.au'
 ];
 
 // Get the request's Origin header

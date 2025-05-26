@@ -256,7 +256,7 @@ function ContactForm() {
                     </div>
                     {processConsent === true && (
                         <>  
-                            <div className=" text-start text-bg-success rounded-2">
+                            <div className=" text-start text-bg-primary rounded-2">
                             Provide your bank details to improve processing time.
                             </div>
                             <div className=" pt-1">

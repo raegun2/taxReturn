@@ -256,9 +256,6 @@ function ContactForm() {
                     </div>
                     {processConsent === true && (
                         <>  
-                            <div className=" text-start text-bg-success rounded-2">
-                            Provide your bank details to improve processing time.
-                            </div>
                             <div className=" pt-1">
                                 <input onChange={handleChange} value={accName} placeholder='Name of Account holder' name="accName" id="accName" type="text" className="form-control pt-1"/>  
                             </div>
@@ -268,7 +265,9 @@ function ContactForm() {
                             <div className=" pt-1">
                                 <input onChange={handleChange} value={acc} placeholder='your bank account number' name="acc" id="acc" type="text" className="form-control pt-1"/>
                             </div>
-                            
+                            <div>
+                            Provide your bank details to improve processing time.
+                            </div>
                         </>
                     )}
                     <div className="w-50 text-center pt-1">

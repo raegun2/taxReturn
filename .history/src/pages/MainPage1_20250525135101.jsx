@@ -151,7 +151,7 @@ function MainPage1() {
                         </div>
                     </div>
                     <div className="col-lg">
-                        <div className="card w-100 h-100">
+                        <div className="card w-100">
                             <div className="card-body p-4">
                                 <img src={proLee} alt="Accountant" className="img-fluid  rounded-circle mb-3" style={{height: "11vh"}}></img>
                                 <h3>Raegun Lee</h3>
@@ -161,11 +161,11 @@ function MainPage1() {
                         </div>
                     </div>
                     <div className="col-lg">
-                        <div className="card w-100 h-100">    
+                        <div className="card w-100">    
                             <div className="card-body p-4">
                                 <img src={proHyunju} alt="Accountant" className="img-fluid rounded-circle mb-3" style={{height: "11vh"}}></img>
                                 <h3>Julie Lee</h3>
-                                <p>Administrative officer, Tax Accountant</p>
+                                <p>Individual Tax Accountant</p>
                                 <p>Julie is an individual tax ccountant with 5 years of experience</p>
                             </div>
                         </div>
