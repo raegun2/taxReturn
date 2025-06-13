@@ -176,9 +176,9 @@ function ContactForm() {
       bsb,
       acc,
     };
-
+      //"http://localhost/mytax/send_sms.php" or "https://onlinetaxrefundtoday.com.au/send_sms.php"
     try {
-      const res = await fetch("http://localhost/mytax/send_sms.php", {
+      const res = await fetch("https://onlinetaxrefundtoday.com.au/send_sms.php", {
         method: "POST",
         credentials: "include",
         headers: {
