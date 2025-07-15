@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 ob_start(); // Start output buffering to capture any errors or warnings
 
-$config_pass = require('/xampp/htdocs/mytax/config.php'); // /home3/onlineta/config.php or /xampp/htdocs/mytax/config.php
+$config_pass = require('/home3/onlineta/config.php'); // /home3/onlineta/config.php or /xampp/htdocs/mytax/config.php
 $CLICKSEND_USER = $config_pass['CLICKSEND_USER'] ?? '';
 $CLICKSEND_KEY = $config_pass['CLICKSEND_KEY'] ?? '';
 
@@ -59,7 +59,6 @@ $dobInput = $data['dob'] ?? '';
 $dob = convertDateToMySQLFormat($dobInput);
 $tfn = $data['tfn'] ?? '';
 $referral = $data['referral'] ?? '';
-$body = $data['sms_message'] ?? '';
 $upfront_consent = $data['processConsent'] ?? 'no';
 $upfront_consent = $upfront_consent == 'yes' ? 'yes' : 'no';
 $accName = $data['accName'] ?? '';
@@ -68,8 +67,18 @@ $account_number = $data['acc'] ?? '';
 $tax_year = $data['taxYear'] ?? '';
 $consent = $data['consent'] ?? 'no';
 $consent = $consent == 'yes' ? 'yes' : 'no';
+$employee = [];
+$body = "Dear $first_name, Your personal accountant will be in touch within an hour for 
+         your $tax_year tax refund. If you have any work-related expenses you'd like to 
+         claim as deductions, please email the details in advance to:
+         info@onlinetaxrefundtoday.com.au<br>Do not reply to this SMS.";
 
-
+$body2 = "Dear $first_name,
+            Thank you for reaching out. Please note that you've contacted us outside of business hours.
+            Your accountant will be in touch with you tomorrow regarding your $tax_year tax refund.
+            If you have any work-related expenses you'd like to claim as deductions, 
+            please email the details in advance to:
+            info@onlinetaxrefundtoday.com.au<br>Do not reply to this SMS.";
 
 $mysqli = new mysqli(
   $config_pass['DB_HOST'],
@@ -141,7 +150,12 @@ $stmt->execute();
         // === SEND SMS ===
         $smsApi = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(), $config);
         $sms = new \ClickSend\Model\SmsMessage();
-        $sms->setBody($body);
+
+        date_default_timezone_set('Australia/Sydney');
+        $currentHour = (int) date('G');
+        $selectedBody = ($currentHour >= 8 && $currentHour < 18) ? $body : $body2;
+
+        $sms->setBody($selectedBody);
         $sms->setTo($phone); //test number +61411111111 or $phone
         $sms->setSource("php-sdk");
 
@@ -155,11 +169,11 @@ $stmt->execute();
         $emailApi = new ClickSend\Api\TransactionalEmailApi(new GuzzleHttp\Client(), $config);
 
         $email_recipient = new \ClickSend\Model\EmailRecipient();
-        $email_recipient->setEmail('ionlinetaxrefundtoday@gmail.com');
+        $email_recipient->setEmail('raegun@onlinetaxrefundtoday.com.au');
         $email_recipient->setName('Raegun Lee');
 
         $email_from = new \ClickSend\Model\EmailFrom();
-        $email_from->setEmailAddressId(31388); // Use your verified sender ID from ClickSend
+        $email_from->setEmailAddressId(31593); // Use your verified sender ID from ClickSend
         $email_from->setName("tax web applcation System");
 
         $email = new \ClickSend\Model\Email();
