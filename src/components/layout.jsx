@@ -17,7 +17,7 @@ const backgroundImages = {
   "/TaxReturn2024": homeHeader5,
   "/TaxReturn2023": homeHeader5,
   "/FeesAndCharges": "null",
-  "/HelpfulResources": "null",
+  
 
 };
 
@@ -38,8 +38,8 @@ const RootLayout = () => {
         
         backgroundImage: `url(${bgImage})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "starter center",
-        Height: "100vh",
+        backgroundPosition: "center center",
+        height: "100vh",
         width:  "100vw",
         
       }}

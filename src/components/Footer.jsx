@@ -69,16 +69,16 @@ export default function Footer() {
                 <div className="row d-flex align-items-center justify-content-evenly">
                             <div className="col-2">
                                 
-                                <img src={taxpractitioners} alt="tax-practitioner-logo" width="90" />
+                                <img src={taxpractitioners} alt="tax-practitioner-logo" style={{width:"90%", maxWidth:"90px"}} />
                             </div >
                             <div className="col-2">
-                                <img src={security} alt="security-logo" width="110" />
+                                <img src={security} alt="security-logo" style={{width:"100%", maxWidth:"110px"}} />
                             </div>
                             <div className="col-2">
-                                <img src={maxReturn} alt="max-return-logo" width="130" />
+                                <img src={maxReturn} alt="max-return-logo" style={{width:"130%", maxWidth:"150px"}} />
                             </div>
                             <div className="col-2">
-                                <img src={footerLogo} alt="Cpa-Logo" width="100" />
+                                <img src={footerLogo} alt="Cpa-Logo" style={{width:"100%", maxWidth:"100px"}} />
                             </div>
                         </div>      
                 </div>

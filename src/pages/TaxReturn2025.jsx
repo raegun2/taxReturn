@@ -7,7 +7,7 @@ export default function TaxReturn2025() {
 
     return (
         
-            <section className=" text-dark pt-lg-3 pt-5 pb-2 text-center">
+            <section className=" text-dark pb-2 text-center">
                 <div className=" container d-flex justify-content-center">
                     <div className="">
                     <div className="row align-items-center justify-content-evenly">

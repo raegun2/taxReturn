@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 
 
@@ -169,7 +169,6 @@ function ContactForm() {
       dob,
       tfn,
       referral,
-      sms_message: `Dear ${firstName}, OnlineTaxRefundToday accountant will be in touch with you soon for your tax refund for ${taxYear}. Please keep your phone handy for a call from us. Thank you for choosing us. please do not reply to this message.`,
       consent,
       processConsent,
       accName,
@@ -283,7 +282,7 @@ function ContactForm() {
                     <div className=" pt-1 text-start">
                         <div className="">
                             <input type="checkbox" value={consent} name="consent" id="consent" checked={consent} onChange={(e) => setConsent(e.target.checked)} required />    
-                            <span> I provide <Link to="/consent" className="text-dark text-decoration-underline">consent</Link> and authorize OnlineTaxRefundToday (ABN 32105919041 and Tax Agent 26262022) to add me as a client in the Tax Agent Portal.</span>
+                            <span> I provide <Link to="/consent" className="text-dark text-decoration-underline">consent</Link> and authorize OTRT TAX ADVISORY (ABN 72687528570 and Tax Agent 26310801) to add me as a client in the Tax Agent Portal.</span>
                         </div>
                     </div>
                     <div className=" pt-1 text-start">
