@@ -16,7 +16,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-1 pe-3 fixed-top">
+    <nav className="navbar pt-3 navbar-expand-lg bg-dark navbar-dark pe-3" style={{ width:"100vw", top:"0" }}>
       <div className="container bg-dark d-block">
         <div className="row justify-content-between align-items-center px-2">
           <div className="col-2 text-start">

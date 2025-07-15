@@ -6,7 +6,6 @@ import AccountingAdvisory from "./pages/Accounting&Advisory";
 import ContactMe from "./pages/ContactMe";
 import TaxReturn2025 from "./pages/TaxReturn2025";
 import FeesAndCharges from "./pages/feesAndCharges";
-import HelpfulResources from "./pages/helpfulResources";
 import Consent from "./pages/Consent";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/Terms&Conditions";
@@ -29,7 +28,6 @@ const router = createBrowserRouter([
       { path: "taxreturn2023", element: <TaxReturn2023/> },
       { path: "taxreturn2024", element: <TaxReturn2024/> },
       { path: "FeesAndCharges", element: <FeesAndCharges />},
-      { path: "HelpfulResources", element: <HelpfulResources />},
       { path: "consent", element: <Consent />},
       { path: "privacypolicy", element: <PrivacyPolicy />},
       { path: "terms&conditions", element: <TermsAndConditions />},

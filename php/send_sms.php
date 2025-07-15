@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 ob_start(); // Start output buffering to capture any errors or warnings
 
-$config_pass = require('/home3/onlineta/config.php'); // /home3/onlineta/config.php or /xampp/htdocs/mytax/config.php
+$config_pass = require('/xampp/htdocs/mytax/config.php'); // /home3/onlineta/config.php or /xampp/htdocs/mytax/config.php
 $CLICKSEND_USER = $config_pass['CLICKSEND_USER'] ?? '';
 $CLICKSEND_KEY = $config_pass['CLICKSEND_KEY'] ?? '';
 

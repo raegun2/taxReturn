@@ -37,7 +37,7 @@ export default function AccountingAdvisory() {
                 <meta name="description" content="BAS Lodgement, Bookkeeping, Financial Statement Preparation." />
                 <link rel="canonical" href="https://onlinetaxrefundtoday.com.au/AccountingAdvisory" />
             </Helmet>
-            <section ref={content1Useref} className=" pt-lg-3 text-dark pt-5 pb-2 text-center d-flex flex-column">
+            <section ref={content1Useref} className=" text-dark pb-2 text-center d-flex flex-column">
                 
                 <div className=" container d-flex justify-content-center">
                     <div className="row align-items-center justify-content-center">
@@ -70,7 +70,7 @@ export default function AccountingAdvisory() {
                     
                 <div className="container h-50 py-3">
                     <div className="row justify-content-evenly">
-                        <div className="col-lg-4 m-3 p-3 text-start text-light bg-info rounded">
+                        <div className="col-lg-4 col-11 m-3 p-3 text-start text-light bg-info rounded">
                             <div className="row flex-column">
                                 <div className="">
                                     <h3 className="fw-bolder">Starter</h3>
@@ -109,7 +109,7 @@ export default function AccountingAdvisory() {
                                 </div>
                             </div>
                         </div>
-                        <div className=" col-lg-4 m-3 p-3 text-start text-light bg-warning rounded">
+                        <div className=" col-lg-4 col-11 m-3 p-3 text-start text-light bg-warning rounded">
                             <div className="row flex-column">
                                 <div className="">
                                     <h3 className="fw-bolder " >Standard</h3>
@@ -155,21 +155,21 @@ export default function AccountingAdvisory() {
                     </div>
                 </div>
             </section>
-            <section className="bg-light vw-100">
+            <section className="bg-light">
                 <div className="container py-3">
-                    <div className="row justify-content-between ">    
-                        <div className="col-lg-6 p-4 bg-info align-content-center">
-                            <img src={xeroServices} alt="Small Business" style={{height: "400px", width:"100%"}}/>   
+                    <div className="row justify-content-center ">    
+                        <div className="col-lg-6 col-11 py-2 bg-info align-content-center">
+                            <img src={xeroServices} alt="Small Business" style={{height: "100%", maxHeight:"400px" , width:"100%"}}/>   
                         </div>
                         
-                        <div className="col-lg-5 p-5 text-start">
-                            <div className="pt3">
+                        <div className="col-lg-6 p-5 text-start">
+                            <div className="py-1">
                                 <img src={ xeroLogo } alt="Xero" style={{height: "50px"}} />
                                 <img src={ myobLogo } alt="MYOB" style={{height: "50px"}} />
                                 <img src={ quickbooksLogo } alt="Quickbooks" style={{height: "50px"}} />
                             </div>
                                                             
-                            <h2 className="text">Xero-Certified Small Business Bookkeepers</h2>
+                            <h2 className="py-1">Xero-Certified Small Business Bookkeepers</h2>
                             <p>Our Xero-certified bookkeepers specialise in helping small to medium 
                                 businesses achieve a solid financial footing and grow into the long-term. 
                                 With a high Google rating and many reviews, we are trusted to 

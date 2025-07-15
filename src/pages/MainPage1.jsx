@@ -20,11 +20,11 @@ function MainPage1() {
                 <link rel="canonical" href="https://onlinetaxrefundtoday.com.au/" />
             </Helmet>
 
-            <section ref ={content1Useref} className=" pt-lg-3 pt-5 text-dark pb-2 text-center">
+            <section ref ={content1Useref} className=" text-dark pb-2 text-center">
                 <div className=" container d-flex justify-content-center">
                     <div className="">
                     <div className="row align-items-center justify-content-evenly">
-                        <div className="col-lg-7">
+                        <div className="col-lg-7 col-11">
                             <h1 className="text-light">Maximise Your <span className="text-warning">Tax Refund in 2025</span></h1>
                             <p className="text-light lead my-4">
                                 Want to get the most from your tax refund in 2025? 
@@ -102,10 +102,10 @@ function MainPage1() {
 
         <div className="container mb-2">
             <div className="row justify-content-evenly align-items-center">
-                <div className="col-lg-4 p-5 text-center">
+                <div className="col-lg-4 col-11 p-5 text-center">
                     <img className="" src={taxPractitioners} width={250} height={250} alt='Tax Practitioners Board'></img>
                 </div>
-                <div className="col-lg-6 text-start">
+                <div className="col-lg-7 col-11 text-start">
                     <div className="lead p-4">
                         <h1><span className="text-warning">Why Lodge Your Tax Return</span> With Us?</h1>
                     </div>
@@ -140,21 +140,21 @@ function MainPage1() {
                 </div>
             </div>
         </div>
-        <section className="bg-light vw-100">
+        <section className="bg-light">
             <div className="container py-3">
-                <div className="row justify-content-between ">    
-                    <div className="col-lg-6 p-4 bg-info align-content-center">
-                        <img src={xeroServices} alt="Small Business" style={{height: "400px", width:"100%"}}/>   
+                <div className="row justify-content-center ">    
+                    <div className="col-lg-6 col-11 col-5 py-2 bg-info align-content-center">
+                        <img src={xeroServices} alt="Small Business" style={{height: "100%", maxHeight:"400px" , width:"100%"}}/>   
                     </div>
                     
-                    <div className="col-lg-5 p-5 text-start">
-                        <div className="pt3">
+                    <div className="col-lg-6 p-5 text-start">
+                        <div className="py-1">
                             <img src={ xeroLogo } alt="Xero" style={{height: "50px"}} />
                             <img src={ myobLogo } alt="MYOB" style={{height: "50px"}} />
                             <img src={ quickbooksLogo } alt="Quickbooks" style={{height: "50px"}} />
                         </div>
                                                         
-                        <h2 className="text">Xero-Certified Small Business Bookkeepers</h2>
+                        <h2 className="py-1">Xero-Certified Small Business Bookkeepers</h2>
                         <p>Our Xero-certified bookkeepers specialise in helping small to medium 
                             businesses achieve a solid financial footing and grow into the long-term. 
                             With a high Google rating and many reviews, we are trusted to 
