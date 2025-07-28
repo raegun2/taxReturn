@@ -62,7 +62,7 @@ function ContactForm() {
         setAcc(value);
         break;
       case "phone": {
-        const rawValue = value.replace(/\D/g, '').slice(0, 10);
+        const rawValue = value.replace(/(?!^\+)\D/g, '').slice(0, 15);
         setPhone(rawValue);
         break;
       }
@@ -112,11 +112,12 @@ function ContactForm() {
     if (!firstName.trim() || !lastName.trim() || !email.trim() || !dob.trim() || !phone.trim() || !tfn.trim()) {
       return "Please fill in all required fields.";
     }
-
-    const phonePattern = /^\d{10}$/;
+    
+    const phonePattern = /^\+?\d{7,15}$/;
     if (!phonePattern.test(phone)) {
-      return "Phone number must be 10 digits.";
+      return "Phone number must be 7 to 15 digits and may start with '+'.";
     }
+
 
     const dobPattern = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/(19|20)\d\d$/;
     if (!dobPattern.test(dob)) {

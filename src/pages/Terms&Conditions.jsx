@@ -174,7 +174,23 @@ export default function TermsAndConditions ()  {
                         <li className="index_item">You declare that You have received and read a copy of the Terms &amp; Conditions, Refund Calculation Sheet(s)/Tax Invoice and Privacy Policy. You acknowledge that your Refund Calculation sheet displays your estimated taxation refund, tax agent fees for lodging your tax return, any tax agent fees for 1-Hour taxation refunds” to be paid to you as an advance to be repaid by you once your refund is released by the Australian Taxation Office. You understand and accept these figures as being accurate.</li>
                         <li className="index_item">You authorise your tax refund to be transferred to your tax agent’s trust account. You understand that You will be paid the balance of your taxation refund only after your taxation agent has deducted its fees and any 1-Hour taxation refund paid to you.</li>
                         <li className="index_item">You have read, accept and agree to be bound by the above terms and conditions and You authorise OTRT TAX ADVISORY PTY LTD trading as OTRT TAX ADVISORY PTY LTD (Registered Tax Agent no. 26310801) to prepare and lodge your Income Tax Return.</li>
-                    </ol>                              
+                    </ol>  
+                    <h2><b>Unsolicited Refund from ATO in Our Trust Account</b></h2>
+                    <p className="text">This applies when the ATO has paid the refund into our trust bank account and you did not use our services for that purpose. We will attempt to contact you to obtain your current bank details for payment of the refund to you. If we are unable to reach you or do not receive your bank details, we will return the tax refund to the ATO.</p>
+                    <p className="text">To return the refund to the ATO, we will require your ATO BPAY code. To obtain this, you authorise us to add you as a client in our Tax Agent Portal solely for the purpose of retrieving the BPAY code and returning the refund.</p>
+                    <p>An administrative fee of $39 plus GST will be deducted for the above work.</p>
+
+                    <h2 class="num-lvl-1"><b>ATO Follow-Up Calls After Tax Return Submission</b></h2>
+                    <p>By engaging our services, you expressly authorise us to add you as a client in our Tax Agent Portal and to contact the ATO on your behalf to assist in resolving any ATO queries related to your tax return, until the return is finalised.</p>
+                    <p>You acknowledge and accept that a fee of $79 plus GST will be charged for each ATO call made on your behalf.</p>
+
+                    <h2><b>Our Refund Policy</b></h2>
+                    <p>Except to the extent required by the Australian Consumer Law, we do not provide or offer refunds of any of our Fees.</p>
+                    <p>Pursuant to the Australian Consumer Law, we may be required to provide a refund to you if you cancel the services before the services are provided (for example, before completion of a Lodgement) or if there is a major failure with the services, we provide to you.</p>
+                    <p>If there is a failure, but the failure is not major, then we may in our discretion determine to resolve the matter by rectifying the failure, re-providing the services to you or by offering you a refund.</p>
+                    <p>The ATO’s decision to enquire, hold, delay adjust and/or audit your information is outside of our service control and does not constitute an issue with, or failure of, our services.</p>
+
+                
                 </div>
 
             </div>
