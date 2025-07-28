@@ -25,7 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 ob_start(); // Start output buffering to capture any errors or warnings
 
+<<<<<<< HEAD
 $config_pass = require('/xampp/htdocs/mytax/config.php'); // /home3/onlineta/config.php or /xampp/htdocs/mytax/config.php
+=======
+$config_pass = require('/home3/onlineta/config.php'); // /home3/onlineta/config.php or /xampp/htdocs/mytax/config.php
+>>>>>>> c4db7b02393c5e139275bd699bc731634d26a8bf
 $CLICKSEND_USER = $config_pass['CLICKSEND_USER'] ?? '';
 $CLICKSEND_KEY = $config_pass['CLICKSEND_KEY'] ?? '';
 
@@ -68,13 +72,21 @@ $tax_year = $data['taxYear'] ?? '';
 $consent = $data['consent'] ?? 'no';
 $consent = $consent == 'yes' ? 'yes' : 'no';
 $employee = [];
+<<<<<<< HEAD
 $body = "Dear $first_name,<br> 
          Your personal accountant will be in touch within an hour for 
+=======
+$body = "Dear $first_name, Your personal accountant will be in touch within an hour for 
+>>>>>>> c4db7b02393c5e139275bd699bc731634d26a8bf
          your $tax_year tax refund. If you have any work-related expenses you'd like to 
          claim as deductions, please email the details in advance to:
          info@onlinetaxrefundtoday.com.au<br>Do not reply to this SMS.";
 
+<<<<<<< HEAD
 $body2 = "Dear $first_name,<br>
+=======
+$body2 = "Dear $first_name,
+>>>>>>> c4db7b02393c5e139275bd699bc731634d26a8bf
             Thank you for reaching out. Please note that you've contacted us outside of business hours.
             Your accountant will be in touch with you tomorrow regarding your $tax_year tax refund.
             If you have any work-related expenses you'd like to claim as deductions, 
@@ -183,12 +195,21 @@ $stmt->execute();
         $email->setSubject("System notification: New message from $first_name $last_name");
         $email->setBody("New message from online client <br> <br>
                     EOFY : $tax_year<br>
+<<<<<<< HEAD
                     Date of Birth : $dobInput<br>
                     Last Name : $last_name<br>
                     Frist Name : $first_name<br>
                     TFN : $tfn<br>
                     Email Address : $email_address<br>
                     Phone : $phone<br>
+=======
+                    Phone : $phone<br>
+                    Frist Name : $first_name<br>
+                    Last Name : $last_name<br>
+                    Email Address : $email_address<br>
+                    Date of Birth : $dob<br>
+                    TFN : $tfn<br>
+>>>>>>> c4db7b02393c5e139275bd699bc731634d26a8bf
                     Referral : $referral<br>
                     No upfront_consent : $upfront_consent<br>
                     Account_name : $accName<br>

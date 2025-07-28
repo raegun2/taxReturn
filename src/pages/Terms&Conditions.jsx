@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 export default function TermsAndConditions ()  {
     return (
         <section className="termsAndConditions pt-lg-3 pt-5">
+        <section className="termsAndConditions pt-lg-3 pt-5">
             <div className="container bg-white text-start">
                 <div className="container p-4 text-start pt-5">
                     <h1 className=""><b>Terms and Conditions</b></h1>
                     <p className="text">Our Terms and Conditions of Service were last updated on: 8th April 2025. Please ensure that you have read and reviewed these Terms and Conditions in conjunction with our Privacy Policy (<Link to="/privacypolicy"><strong>here</strong></Link>).</p>
                     <p className="text">If you have any questions or queries in relation to our Terms and Conditions or our Privacy Policy, please do not hesitate to contact us by using the contact details below.</p>
+                    <p className="">In these Terms and Conditions, unless otherwise specified, the use of the words ‘us’, ‘we’, or ‘our’ refers to OTRT TAX ADIVISORY PTY LTD (ABN 72 687 528 570) trading as OTRT TAX ADIVISORY PTY LTD (including any of our agents). We are a Registered Tax Agent (Registration No. 26310801) which owns, operates and controls the website (inclusive of all electronic or online facilities and any underlying software and platform through which you may access and use our services) accessible at <Link to="/">https://www.onlinetaxrefundtoday.com.au</Link> (“<strong>Website</strong>”). We provide “<strong>Tax Agent Services</strong>”, being any service that relates to ascertaining your liabilities, obligations or entitlements under applicable taxation laws of Australia. Tax Agent Services includes but is not limited to services such as preparing returns, notices, statements, applications or other documents regarding your liabilities, obligations or entitlements under an applicable taxation law. Any use of the word ‘you’ or ‘your’ refers to you as a user, being an individual or entity accessing or using our Website.</p>
                     <p className="">In these Terms and Conditions, unless otherwise specified, the use of the words ‘us’, ‘we’, or ‘our’ refers to OTRT TAX ADIVISORY PTY LTD (ABN 72 687 528 570) trading as OTRT TAX ADIVISORY PTY LTD (including any of our agents). We are a Registered Tax Agent (Registration No. 26310801) which owns, operates and controls the website (inclusive of all electronic or online facilities and any underlying software and platform through which you may access and use our services) accessible at <Link to="/">https://www.onlinetaxrefundtoday.com.au</Link> (“<strong>Website</strong>”). We provide “<strong>Tax Agent Services</strong>”, being any service that relates to ascertaining your liabilities, obligations or entitlements under applicable taxation laws of Australia. Tax Agent Services includes but is not limited to services such as preparing returns, notices, statements, applications or other documents regarding your liabilities, obligations or entitlements under an applicable taxation law. Any use of the word ‘you’ or ‘your’ refers to you as a user, being an individual or entity accessing or using our Website.</p>
                     <h2 className="num-lvl-1"><b>Acknowledgment&nbsp;</b></h2>
                     <ol className="index">
@@ -24,6 +26,8 @@ export default function TermsAndConditions ()  {
                     </ol>
                     <h2 className="num-lvl-1"><b>Jurisdiction &amp; Governing Law</b></h2>
                     <ol className="index">
+                        <li  className="index_item">Your use of our Website, our Terms and Conditions and Privacy Policy are governed by and construed in accordance with the laws of the State of Queensland, Australia, and are subject to the laws of the Commonwealth of Australia wherever so applicable.</li>
+                        <li className="index_item">The courts of the State of Queensland (and the Commonwealth of Australia wherever applicable) shall have jurisdiction in respect of, or arising from or in connection to our Website, these Terms and Conditions, and the Privacy Policy.</li>
                         <li  className="index_item">Your use of our Website, our Terms and Conditions and Privacy Policy are governed by and construed in accordance with the laws of the State of Queensland, Australia, and are subject to the laws of the Commonwealth of Australia wherever so applicable.</li>
                         <li className="index_item">The courts of the State of Queensland (and the Commonwealth of Australia wherever applicable) shall have jurisdiction in respect of, or arising from or in connection to our Website, these Terms and Conditions, and the Privacy Policy.</li>
                         <li className="index_item">If there is any dispute between us and you which cannot be resolved within 7 days (or within such further period as the parties agree upon), the parties to the dispute must seek to agree on a process for resolving whole or part of the dispute through means other than litigation and by way of alternative dispute resolution including further negotiations, mediation, conciliation, or independent expert determination, and the procedure and timetable for any process relating to the resolution of the relevant dispute.</li>
@@ -168,6 +172,7 @@ export default function TermsAndConditions ()  {
                             </ol>
                         </li>
                     </ol>
+                    <p className="text">In the event that you wish to revoke any authority contained in clause 4, you must email us at <a href="mailto:info@onlinetaxrefundtoday.com.au">info@onlinetaxrefundtoday.com.au</a>.</p>
                     <p className="text">In the event that you wish to revoke any authority contained in clause 4, you must email us at <a href="mailto:info@onlinetaxrefundtoday.com.au">info@onlinetaxrefundtoday.com.au</a>.</p>
                     <h2 className="num-lvl-1"><b>Authorisation to Lodge Income Tax Return (Taxation Services)</b></h2>
                     <ol className="index">

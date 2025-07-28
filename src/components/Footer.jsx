@@ -3,6 +3,10 @@ import footerLogo from "../assets/Ozbusiness2.png";
 import security from "../assets/maxrefund3.png";
 import maxReturn from "../assets/cybersecurity0.png";
 import taxpractitioners from "../assets/tpb0.png";
+import footerLogo from "../assets/Ozbusiness2.png";
+import security from "../assets/maxrefund3.png";
+import maxReturn from "../assets/cybersecurity0.png";
+import taxpractitioners from "../assets/tpb0.png";
 
 
 export default function Footer() {
