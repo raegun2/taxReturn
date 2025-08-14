@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function TermsAndConditions ()  {
     return (
-        <section className="termsAndConditions pt-lg-3 pt-5">
+        
         <section className="termsAndConditions pt-lg-3 pt-5">
             <div className="container bg-white text-start">
                 <div className="container p-4 text-start pt-5">

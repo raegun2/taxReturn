@@ -12,7 +12,7 @@ export default function TaxReturn2025() {
                     <div className="">
                     <div className="row align-items-center justify-content-evenly">
                         <div className="col-lg-7">
-                            <h1 className="text-light">Maximise Your <span className="text-warning">Tax Refund in 2025</span></h1>
+                            <h1 className="text-light">Maximize Your <span className="text-warning">Tax Refund in 2025</span></h1>
                             <p className="text-light lead my-4">
                                 Want to get the most from your tax refund in 2025? 
                                 Our registered tax agents are here to help. 

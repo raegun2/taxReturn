@@ -49,15 +49,21 @@ function Navbar() {
                     </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="FeesAndCharges" className="nav-link" onClick={handleNavClick}>
-                    Fees & Charges
-                  </Link>
-                </li>                
+                    <Link to="TaxCalculatorP" className="nav-link" onClick={handleNavClick}>
+                        Tax Calculator
+                    </Link>
+                </li>
                 <li className="nav-item">
                   <Link to="AccountingAdvisory" className="nav-link" onClick={handleNavClick}>
                     Accounting & Advisory
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link to="FeesAndCharges" className="nav-link" onClick={handleNavClick}>
+                    Fees & Charges
+                  </Link>
+                </li>                
+                
                 <li className="nav-item">
                   <Link to="ContactMe" className="nav-link" onClick={handleNavClick}>
                     Contact Us

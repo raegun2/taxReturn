@@ -17,6 +17,7 @@ const backgroundImages = {
   "/TaxReturn2024": homeHeader5,
   "/TaxReturn2023": homeHeader5,
   "/FeesAndCharges": "null",
+  "/TaxCalculator": "null"
   
 
 };

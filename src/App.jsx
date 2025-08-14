@@ -11,6 +11,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/Terms&Conditions";
 import TaxReturn2023 from "./pages/TaxReturn2023";
 import TaxReturn2024 from "./pages/TaxReturn2024";
+import TaxCalculatorP from "./pages/TaxCalculatorP";
 
 
 
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       { path: "consent", element: <Consent />},
       { path: "privacypolicy", element: <PrivacyPolicy />},
       { path: "terms&conditions", element: <TermsAndConditions />},
+      { path: "TaxCalculatorP", element: <TaxCalculatorP/>},
       
     ],
   },

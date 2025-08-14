@@ -18,7 +18,7 @@ function ContactForm() {
   const [accName, setAccName] = useState("");
   const [bsb, setBsb] = useState("");
   const [acc, setAcc] = useState("");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
 
   const handleChange = (e) => {
@@ -92,6 +92,7 @@ function ContactForm() {
 
         if (!(digitsOnly.length === 8 || digitsOnly.length === 9)) {
             setError(true);
+            
             setErrorMessage("TFN must contain 8 or 9 digits.");
         } else if (!validateTFN(digitsOnly)) {
             setError(true);
@@ -130,6 +131,7 @@ function ContactForm() {
     }
 
     if (error) {
+      
       return "Invalid TFN.";
     }
 
@@ -159,7 +161,7 @@ function ContactForm() {
     if (validationError) {
       setResponse(validationError);
       return;
-    }
+    } 
 
     const payload = {
       taxYear,
@@ -187,8 +189,10 @@ function ContactForm() {
         body: JSON.stringify(payload)
       });
 
+      
+
       const result = await res.json();
-      if (!res.ok || !result.success) {
+      if (!res.ok && !result.success) {
         setResponse(null);
         setErrorMessage(result.error || "Failed to communicate with your accountant, Please try again");
         console.error("Error response:", result);
@@ -217,6 +221,8 @@ function ContactForm() {
       setErrorMessage("Failed to submit, try again");
       return;
     }
+
+
 
     
     
@@ -289,7 +295,7 @@ function ContactForm() {
                     <div className=" pt-1 text-start">
                         <div className="">
                             <input type="checkbox" value={processConsent} name="processConsent" id="processConsent" checked={processConsent} onChange={(e) => setProcessConsent(e.target.checked)} />    
-                            <span > No upfront fee option.</span>
+                            <span > $0 upfront fee option.</span>
                         </div>
                     </div>
                     {processConsent === true && (
@@ -310,10 +316,12 @@ function ContactForm() {
                           </div>  
                         </>
                     )}
+                    {error === false &&
                     <div className="w-50 text-center pt-1">
                         <input className="btn btn-primary w-75 " id="button"value="Submit" type="submit" />
                     </div>
-                    {(response || errorMessage) && (
+                    }
+                    
                         <div className="col-12 mt-3">
                             {response && (
                             <div className="alert alert-info text-center">
@@ -326,7 +334,7 @@ function ContactForm() {
                             </div>
                             )}
                         </div>
-                        )}
+                        
 
                         
             </div>             
