@@ -23,13 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-ob_start(); // Start output buffering to capture any errors or warnings
-
-<<<<<<< HEAD
 $config_pass = require('/xampp/htdocs/mytax/config.php'); // /home3/onlineta/config.php or /xampp/htdocs/mytax/config.php
-=======
-$config_pass = require('/home3/onlineta/config.php'); // /home3/onlineta/config.php or /xampp/htdocs/mytax/config.php
->>>>>>> c4db7b02393c5e139275bd699bc731634d26a8bf
 $CLICKSEND_USER = $config_pass['CLICKSEND_USER'] ?? '';
 $CLICKSEND_KEY = $config_pass['CLICKSEND_KEY'] ?? '';
 
@@ -54,7 +48,6 @@ function convertDateToMySQLFormat($dateStr) {
 $rawInput = file_get_contents("php://input");
 file_put_contents("log.txt", $rawInput);
 $data = json_decode($rawInput, true);
-
 $phone = $data['phone'] ?? '';
 $first_name = $data['firstName'] ?? '';
 $last_name = $data['lastName'] ?? '';
@@ -72,21 +65,13 @@ $tax_year = $data['taxYear'] ?? '';
 $consent = $data['consent'] ?? 'no';
 $consent = $consent == 'yes' ? 'yes' : 'no';
 $employee = [];
-<<<<<<< HEAD
 $body = "Dear $first_name,<br> 
          Your personal accountant will be in touch within an hour for 
-=======
-$body = "Dear $first_name, Your personal accountant will be in touch within an hour for 
->>>>>>> c4db7b02393c5e139275bd699bc731634d26a8bf
          your $tax_year tax refund. If you have any work-related expenses you'd like to 
          claim as deductions, please email the details in advance to:
          info@onlinetaxrefundtoday.com.au<br>Do not reply to this SMS.";
 
-<<<<<<< HEAD
 $body2 = "Dear $first_name,<br>
-=======
-$body2 = "Dear $first_name,
->>>>>>> c4db7b02393c5e139275bd699bc731634d26a8bf
             Thank you for reaching out. Please note that you've contacted us outside of business hours.
             Your accountant will be in touch with you tomorrow regarding your $tax_year tax refund.
             If you have any work-related expenses you'd like to claim as deductions, 
@@ -110,7 +95,6 @@ if ($mysqli->connect_error) {
     exit;
 }
 
-
 // Prepare statement to check duplicate entry
 $stmt = $mysqli->prepare("SELECT COUNT(*) FROM tax_submissions WHERE tfn = ? AND tax_year = ?");
 $stmt->bind_param("ss", $tfn, $tax_year);
@@ -120,7 +104,6 @@ $stmt->fetch();
 $stmt->close();
 
 if (empty($phone) || empty($first_name) || empty($last_name) || empty($email_address) || empty($dob) || empty($tfn) || empty($consent)) {
-    ob_clean();
     file_put_contents('debug_missing_fields_log.txt', print_r($data, true));
     echo json_encode(['success' => false, 'error' => 'Required fields are missing.']);
     $mysqli->close();
@@ -130,7 +113,6 @@ if (empty($phone) || empty($first_name) || empty($last_name) || empty($email_add
 
 if ($count > 0) {
     // Duplicate submission detected
-    ob_clean();
     echo json_encode(['success' => false, 'error' => 'Duplicate submission detected. If this problem persists, Please call us.']);
     $mysqli->close();
     http_response_code(400); // Bad Request
@@ -139,17 +121,18 @@ if ($count > 0) {
 }
 if ($count == 0) {
     // If no duplicate, insert data
-$stmt = $mysqli->prepare("INSERT INTO tax_submissions (
-    tax_year, phone, first_name, last_name, email_address, dob, tfn, referral,
-    consent, account_name, bsb, account_number, upfront_consent
-) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $mysqli->prepare("INSERT INTO tax_submissions (
+        tax_year, phone, first_name, last_name, email_address, dob, tfn, referral,
+        consent, account_name, bsb, account_number, upfront_consent
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+    );
 
-$stmt->bind_param("sssssssssssss",
-    $tax_year, $phone, $first_name, $last_name, $email_address, $dob, $tfn, $referral,
-    $consent, $accName, $bsb, $account_number, $upfront_consent
-);
+    $stmt->bind_param("sssssssssssss",
+        $tax_year, $phone, $first_name, $last_name, $email_address, $dob, $tfn, $referral,
+        $consent, $accName, $bsb, $account_number, $upfront_consent
+    );
 
-$stmt->execute();
+    $stmt->execute();
 
     // ClickSend setup
     require_once(__DIR__ . '/vendor/autoload.php');
@@ -195,28 +178,18 @@ $stmt->execute();
         $email->setSubject("System notification: New message from $first_name $last_name");
         $email->setBody("New message from online client <br> <br>
                     EOFY : $tax_year<br>
-<<<<<<< HEAD
                     Date of Birth : $dobInput<br>
                     Last Name : $last_name<br>
-                    Frist Name : $first_name<br>
+                    First Name : $first_name<br>
                     TFN : $tfn<br>
                     Email Address : $email_address<br>
                     Phone : $phone<br>
-=======
-                    Phone : $phone<br>
-                    Frist Name : $first_name<br>
-                    Last Name : $last_name<br>
-                    Email Address : $email_address<br>
-                    Date of Birth : $dob<br>
-                    TFN : $tfn<br>
->>>>>>> c4db7b02393c5e139275bd699bc731634d26a8bf
                     Referral : $referral<br>
                     No upfront_consent : $upfront_consent<br>
                     Account_name : $accName<br>
                     BSB : $bsb<br>
                     Account_number : $account_number<br>
                     Consent : $consent<br> <br>
-
                     Add new client to tax portal and proceed tax return");
 
         $email_result = $emailApi->emailSendPost($email);
@@ -231,7 +204,7 @@ $stmt->execute();
             'error' => $e->getMessage()
         ]);
     }
-$stmt->close();
-$mysqli->close();
+    $stmt->close();
+    $mysqli->close();
 }
 ?>
